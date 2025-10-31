@@ -1,0 +1,331 @@
+body {
+    margin: 0;
+    padding: 0px;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-size: large;
+    color: #1A3047; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    top: 0;
+    bottom: 100%;
+}
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #1A3047;
+    color: white;
+    z-index: 1000;
+    height: 80px;
+    box-sizing: border-box;
+}
+/* Logo Styling */
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo a:hover {
+    opacity: 0.7;
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    position: relative;  /* Ensures dropdown is positioned relative to this */
+    margin-left: -1px;
+}
+
+/* Navbar Link Styling */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: opacity 0.3s;
+    padding: 10px 15px;
+    display: block;  /* Ensures clickable area is consistent */
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Dropdown */
+.nav-links .dropdown {
+    position: relative;  /* Ensures dropdown content is positioned relative to this */
+}
+
+/* Dropdown Menu */
+.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;  /* Ensures dropdown appears directly below "Apartment" */
+    left: 50%;  /* Aligns it to the center of "Apartment" */
+    transform: translateX(-50%);  /* Centers dropdown under "Apartment" */
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Show dropdown when hovering */
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Links */
+.nav-links .dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    text-align: left;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Hover effect on dropdown links */
+.nav-links .dropdown-content a:hover {
+    background-color: #ddd;
+}
+.content {
+    display: flex; /* Use flexbox to align sidebar and main content */
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 200px; /* Set the width of the sidebar */
+    background-color: rgba(138, 103, 31, 0.2); /* Light background color */
+    padding: 15px; /* Add padding inside the sidebar */
+    border: 1px solid #ccc; /* Add a border around the sidebar */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    margin-right: 20px; /* Add spacing between the sidebar and the main content */
+    margin-top: 100px; /* Push the sidebar down */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.sidebar h3 {
+    font-size: 1.2rem;
+    color: #1A3047;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #1A3047;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #FFB612; /* Highlight link on hover */
+}
+
+.main-content {
+    flex: 1; /* Allow the main content to take up the remaining space */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    position: relative;
+}
+header h1 {
+    font-size: 3em; 
+    display: inline-block; 
+    padding: 10px; 
+}
+main {
+    padding: 10px;
+    margin: 50px;
+    border-radius: 10px;
+}
+.footer {
+    text-align: center;
+    color: #1A3047;
+    background-color: #FFB612;
+    padding: 10px; /* Add padding for better spacing */
+    position: relative; /* Ensure the footer is positioned relative to the content */
+    width: 100%; /* Make the footer span the entire width of the page */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
+    margin-top: -10px; /* Reduce spacing between the footer and the content above */
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+label {
+    font-weight: bold;
+}
+input, textarea, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: black; 
+}
+button {
+    padding: 10px;
+    background-color: #FFB612; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #E6A700; 
+
+
+}
+.job-post {
+    background-color: #1A3047; 
+    color: white; 
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.comments {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid #1A3047;
+}
+.comment {
+    background-color: #1A3047; 
+    color: white; 
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.job-posting {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.job-posting h3 {
+    font-size: 1.5rem;
+    color: #1A3047;
+    margin-bottom: 10px;
+}
+
+.job-posting p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.job-posting a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.job-posting a:hover {
+    text-decoration: underline;
+}
+
+.comments {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.comment {
+    margin-bottom: 10px;
+}
+
+.comment strong {
+    color: #1A3047;
+}
+
+.comment-form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.comment-form button {
+    padding: 10px;
+    background-color: #FFB612;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-form button:hover {
+    background-color: #E6A700;
+}
+.input-box {
+    width: 100%; /* Make the box span the full width */
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px; /* Add padding inside the box */
+    border: 1px solid #ccc; /* Add a border around the box */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    margin-top: 20px; /* Add spacing above the box */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.input-box h2 {
+    font-size: 1.5rem;
+    color: #1A3047;
+    margin-bottom: 15px;
+}
+
+#submitted-details {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}

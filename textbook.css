@@ -1,0 +1,392 @@
+/* General styling */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style form inputs */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+input, select {
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #1A3047;
+    color: white;
+    cursor: pointer;
+    width: 50%;
+    margin: auto;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Book card styles */
+.book-card {
+    background: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.available {
+    color: green;
+    font-weight: bold;
+}
+
+.unavailable {
+    color: red;
+    font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #1A3047;
+    color: white;
+    z-index: 1000;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+/* Ensure content starts below navbar */
+.container {
+    flex: 1;
+    margin-top: 80px;  /* Pushes content down below navbar */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo a:hover {
+    opacity: 0.7;
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    position: relative;  /* Ensures dropdown is positioned relative to this */
+    margin-left: -1px;
+}
+
+/* Navbar Link Styling */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: opacity 0.3s;
+    padding: 10px 15px;
+    display: block;  /* Ensures clickable area is consistent */
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Dropdown */
+.nav-links .dropdown {
+    position: relative;  /* Ensures dropdown content is positioned relative to this */
+}
+
+/* Dropdown Menu */
+.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;  /* Ensures dropdown appears directly below "Apartment" */
+    left: 50%;  /* Aligns it to the center of "Apartment" */
+    transform: translateX(-50%);  /* Centers dropdown under "Apartment" */
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Show dropdown when hovering */
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Links */
+.nav-links .dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    text-align: left;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Hover effect on dropdown links */
+.nav-links .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+#footer {
+    width: 100%;
+    background-color: #FFC502;
+    color: #1A3047;
+    padding: 10px 0;
+    text-align: center;
+    position: relative; 
+    bottom: 0;
+    left: 0;
+}
+.container {
+    margin-bottom: 30px;  /* Adjusts space above footer */
+}
+
+/* Cart Popup */
+#cartPopup {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.cart-popup-content {
+    padding: 20px;
+}
+
+.close-cart {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#cartList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cartList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 0 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#cartList li:last-child {
+    border-bottom: none;
+}
+
+#cartList .book-title {
+    flex: 1;
+    text-align: left;
+}
+
+#cartList .book-price {
+    flex: 1;
+    text-align: right;
+}
+
+#cartButton {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 250px;
+}
+
+#cartPopup.open {
+    right: 0;
+}
+
+.cart-header {
+    background-color: #FFC502;
+    color: #1A3047;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: -5px;
+}
+
+/* Checkout Section */
+#checkoutPage {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#checkoutPage h2 {
+    margin-bottom: 15px;
+    color: #1A3047;
+}
+
+#checkoutItems {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#checkoutItems li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    font-size: 16px;
+}
+
+#checkoutItems li:last-child {
+    border-bottom: none;
+}
+
+#checkoutTotal {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #1A3047;
+}
+
+#checkoutPage button {
+    background-color: #1A3047;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px 10px;
+    cursor: pointer;
+}
+
+#checkoutPage button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Checkout Popup Modal */
+#checkoutPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    z-index: 2000;
+    display: none;  /* Hidden by default */
+    overflow-y: auto;
+}
+
+#checkoutPopup.open {
+    display: block;
+}
+
+/* Checkout Form Fields */
+#checkoutForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#checkoutForm input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#checkoutForm button {
+    background-color: #1A3047;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+#checkoutForm button:hover {
+    background-color: #0056b3;
+}
+
+#checkoutPopup button {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#checkoutPopup button:hover {
+    background-color: #d32f2f;
+}

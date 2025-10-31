@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Complex Overview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/apartmentOverview.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Apartment Complex Overview</h1>
+    </header>
+    
+     <!-- Navbar -->
+     <nav class="navbar">
+        <h1 class="logo"> <a href="{{ url_for('home') }}">Drexel Den</a> </h1>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#">Apartment</a>
+                <ul class="dropdown-content">
+                    <li><a href="{{ url_for('overview') }}">Overview</a></li>
+                    <li><a href="{{ url_for('chestnut') }}">Chestnut Square</a></li>
+                    <li><a href="{{ url_for('summit') }}">The Summit</a></li>
+                    <li><a href="{{ url_for('ucross') }}">University Crossings</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ url_for('job_postings') }}">Job Posting</a></li>
+            <li><a href="{{ url_for('work_study') }}">Work Study</a></li>
+            <li><a href="{{ url_for('food') }}">Food Recommendation</a></li>
+            <li><a href="{{ url_for('text_book') }}">Textbooks</a></li>
+            <li><a href="{{ url_for('scholarships') }}">Scholarship</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Apartments Overview -->
+    <div class="overview-container">
+        <div class="apartment-card">
+            <a href="{{ url_for('chestnut') }}">
+                <img src="{{ url_for('static', filename='img/chestnut.png') }}" alt="Chestnut Square" class="apartment-img">
+                <div class="apartment-details">
+                    <h2>Chestnut Square</h2>
+                    <p class="price-range">$979 - $1879</p>
+                    <p class="amenities">Chestnut Square offers a variety of student-friendly amenities, including fully equipped apartments, high-speed internet, 24-hour fitness and recreation centers, academic support, private study rooms, and on-site dining, with convenient access to Drexel University and the University of Pennsylvania.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="apartment-card">
+            <a href="{{ url_for('summit') }}">
+                <img src="{{ url_for('static', filename='img/summit.png') }}" alt="The Summit" class="apartment-img">
+                <div class="apartment-details">
+                    <h2>The Summit</h2>
+                    <p class="price-range">$909 - $2174</p>
+                    <p class="amenities"> The Summit at University City offers student-friendly amenities such as fully furnished apartments, high-speed internet, a 24-hour fitness center, recreation spaces with arcade games, movie theater, multimedia area, a sky lounge, and an outdoor kitchen. It also features academic support with private and group study lounges, an Academic Success Center, and includes all utilities. The location is conveniently close to Drexel University and transportation options. </p>
+                </div>
+            </a>
+        </div>
+
+        <div class="apartment-card">
+            <a href="{{ url_for('ucross') }}">
+                <img src="{{ url_for('static', filename='img/ucross.png') }}" alt="University Crossings" class="apartment-img">
+                <div class="apartment-details">
+                    <h2>University Crossings</h2>
+                    <p class="price-range">$909 - $1769</p>
+                    <p class="amenities">University Crossings provides amenities such as fully furnished apartments with private and shared bedrooms, a 24-hour fitness center, recreation areas with arcade games, and an Academic Success Center. It also offers utilities included in rent, high-speed internet, a community lounge, private study spaces, and Wi-Fi throughout the property. The location is close to Drexel University, dining, retail, and public transport options.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <h2>Drexel Den</h2>
+        <p>@ 2025 Drexel Den. All Rights Reserved.<br>
+           Created by Merril Biju, Isha Patel, Zarin Tasnim, Rakia Binte Islam
+        </p>
+     </div>
+
+</body>
+</html>

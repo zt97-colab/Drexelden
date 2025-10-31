@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell/Rent Textbooks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/textbook.css') }}">
+</head>
+<body>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <h1 class="logo"> <a href="{{ url_for('home') }}">Drexel Den</a> </h1>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Apartment</a>
+                    <ul class="dropdown-content">
+                        <li><a href="{{ url_for('overview') }}">Overview</a></li>
+                        <li><a href="{{ url_for('chestnut') }}">Chestnut Square</a></li>
+                        <li><a href="{{ url_for('summit') }}">The Summit</a></li>
+                        <li><a href="{{ url_for('ucross') }}">University Crossings</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('job_postings') }}">Job Posting</a></li>
+                <li><a href="{{ url_for('work_study') }}">Work Study</a></li>
+                <li><a href="{{ url_for('food') }}">Food Recommendation</a></li>
+                <li><a href="{{ url_for('text_book') }}">Textbooks</a></li>
+                <li><a href="{{ url_for('scholarships') }}">Scholarship</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+
+    <div class="container">
+        <h1>Sell/Rent Textbooks</h1>
+
+        <!-- Search and Filter Options -->
+        <input type="text" id="searchInput" placeholder="Search by title..." onkeyup="filterBooks()">
+        <button onclick="toggleAvailable()">Show Available Only</button>
+
+        <!-- Add New Textbook Form -->
+        <h2>Add a Textbook</h2>
+        <form id="addBookForm">
+            <input type="text" id="titleInput" placeholder="Title" required>
+            <input type="text" id="authorInput" placeholder="Author" required>
+            <input type="number" id="priceInput" placeholder="Price" required>
+            <select id="availabilityInput">
+                <option value="true">Available</option>
+                <option value="false">Out of Stock</option>
+            </select>
+            <button type="button" onclick="addBook()">Add Textbook</button>
+        </form>
+
+        <!-- Textbook Listings -->
+        <div id="bookList">
+            <!-- Books will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Cart Popup -->
+    <div id="cartPopup" class="cart-popup">
+       <div class="cart-popup-content">
+           <span class="close-cart" onclick="closeCart()">&times;</span>
+           <h3 class="cart-header">Your Cart</h3>
+           <ul id="cartList">
+               <!-- Cart items will be dynamically added here -->
+           </ul>
+           <button onclick="openCheckout()">Proceed to Checkout</button> <!-- ✅ Moved here -->
+       </div>
+   </div>
+
+    <!-- Cart Button -->
+    <button id="cartButton" onclick="openCart()">View Cart</button>
+
+    <!-- Checkout Popup (Modal) -->
+    <div id="checkoutPopup" class="checkout-popup hidden">
+        <div class="popup-content">
+            <h2>Checkout</h2>
+            <ul id="checkoutItems">
+                <!-- Checkout items will be dynamically added here -->
+            </ul>
+            <p id="checkoutTotal"></p>
+
+            <!-- Checkout Form -->
+            <form id="checkoutForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Full Name" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" placeholder="Your Address" required>
+
+                <label for="creditCard">Credit Card:</label>
+                <input type="text" id="creditCard" placeholder="Credit Card Number" required>
+
+                <button type="button" onclick="confirmPurchase()">Confirm Purchase</button>
+            </form>
+
+            <button onclick="closeCheckout()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='scripts/textbook.js') }}"></script>
+
+    <!-- Footer placed outside container -->
+    <div id="footer">
+        <h2>Drexel Den</h2>
+        <p>@ 2025 Drexel Den. All Rights Reserved.<br>
+            Created by Merril Biju, Isha Patel, Zarin Tasnim, Rakia Binte Islam
+        </p>
+    </div>
+</body>
+</html>

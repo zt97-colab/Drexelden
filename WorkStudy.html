@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work Study - Job Board</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/WorkStudy.css') }}">
+</head>
+<body>
+
+
+  <!-- HEADER copied from Scholarship style, applied to Work Study content -->
+<header>
+  <div class="logo"><a href="{{ url_for('home') }}">Drexel Den</a></div>
+  <nav class="nav-links">
+
+    <div class="dropdown">
+      <a href="#">Apartment</a>
+      <div class="dropdown-content">
+        <a href="{{ url_for('overview') }}">Overview</a>
+        <a href="{{ url_for('chestnut') }}">Chestnut Square</a>
+        <a href="{{ url_for('summit') }}">The Summit</a>
+        <a href="{{ url_for('ucross') }}">University Crossings</a>
+      </div>
+    </div>
+
+    <a href="{{ url_for('job_postings') }}">Job Posting</a>
+    <a href="{{ url_for('work_study') }}">Work Study</a>
+    <a href="{{ url_for('food') }}">Food Recommendation</a>
+    <a href="{{ url_for('text_book') }}">Textbooks</a>
+    <a href="{{ url_for('scholarships') }}">Scholarship</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+  </nav>
+
+</header>
+
+<h1>Work Study</h1>
+
+  
+  
+
+
+
+
+  <main class="main-container">
+    <aside class="left-panel">
+      <div class="card filters">
+        <h2>Filters</h2>
+
+        <label for="education-filter">Education Level:</label>
+        <select id="education-filter">
+          <option value="" disabled selected>Select education level</option>
+          <option value="Freshman">Freshman</option>
+          <option value="Sophomore">Sophomore</option>
+          <option value="Pre-Junior">Pre-Junior</option>
+          <option value="Junior">Junior</option>
+          <option value="Senior">Senior</option>
+          <option value="Graduate Student">Graduate Student</option>
+        </select>
+
+        <label for="campus-filter">Campus:</label>
+        <select id="campus-filter">
+            <option value="" disabled selected>All Campuses</option>
+            <option value="UNIVERSITY CITY">University City</option>
+            <option value="CENTER CITY">Center City</option>
+            <option value="QUEEN LANE">Queen Lane</option>
+            <option value="ACADEMY OF NATURAL SCIENCES">Academy of Natural Sciences</option>
+            <option value="West Reading">West Reading</option>
+        </select>
+
+        <label for="department-filter">Department:</label>
+        <select id="department-filter">
+          <option value="" disabled selected>Select department</option>
+          <option value="Acounting">Acounting</option>
+          <option value="AJ Drexel Autism Institute">AJ Drexel Autism Institute</option>
+          <option value="Athletics">Athletics</option>
+          <option value="Atwater Kent Collection/Lenfest for Cultural Parterships">Atwater Kent Collection/Lenfest for Cultural Parterships</option>
+          <option value="BEES">BEES</option>
+          <option value="Biochemistry & Molecular Biology">Biochemistry & Molecular Biology</option>
+          <option value="Biodiversity, Earth and Environmental Science">Biodiversity, Earth and Environmental Science</option>
+          <option value="Botany">Botany</option>
+          <option value="CCI">CCI</option>
+          <option value="Chemical and Biological Engineering">Chemical and Biological Engineering</option>
+          <option value="Chemistry">Chemistry</option>
+          <option value="Cinema & Television">Cinema & Television</option>
+          <option value="Climate & Sustainability">Climate & Sustainability</option>
+          <option value="College of Engineering">College of Engineering</option>
+          <option value="Communications and Marketing">Communications and Marketing</option>
+          <option value="Community Health & Prevention">Community Health & Prevention</option>
+          <option value="Creative Arts Therapies Department">Creative Arts Therapies Department</option>
+          <option value="Diatom Herbarium">Diatom Herbarium</option>
+          <option value="Dornsife Centre for Neighborhood Partnerships">Dornsife Centre for Neighborhood Partnerships</option>
+          <option value="Dornsife Office For Experiential Learning">Dornsife Office For Experiential Learning</option>
+          <option value="Drexel Central">Drexel Central</option>
+          <option value="EMSS">EMSS</option>
+          <option value="EMSS, Operations">EMSS, Operations</option>
+          <option value="EMSS; Graduate Admissions">EMSS; Graduate Admissions</option>
+          <option value="Enrollment Management">Enrollment Management</option>
+          <option value="Enrollment Management, Inter-College Advising">Enrollment Management, Inter-College Advising</option>
+          <option value="Epidemiology and Biostatistics">Epidemiology and Biostatistics</option>
+          <option value="Fashion Design">Fashion Design</option>
+          <option value="Global Studies and Modern Languages">Global Studies and Modern Languages</option>
+          <option value="Gupta Governance Institute">Gupta Governance Institute</option>
+          <option value="Hillel at Drexel University">Hillel at Drexel University</option>
+          <option value="Housing and Residence Life">Housing and Residence Life</option>
+          <option value="Institutional Advancement">Institutional Advancement</option>
+          <option value="Lebow Graduate Student Services">Lebow Graduate Student Services</option>
+          <option value="Legacy Center Archives">Legacy Center Archives</option>
+          <option value="Legal Research Center">Legal Research Center</option>
+          <option value="Leonard Pearlstein Gallery">Leonard Pearlstein Gallery</option>
+          <option value="Library and Archives">Library and Archives</option>
+          <option value="Lindy Center for Civic Engagement">Lindy Center for Civic Engagement</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Marketing and Communications">Marketing and Communications</option>
+          <option value="Mechanical Engineering and Mechanics">Mechanical Engineering and Mechanics</option>
+          <option value="MEM">MEM</option>
+          <option value="Microbiology and Immunology">Microbiology and Immunology</option>
+          <option value="Neurobiology and Anatomy">Neurobiology and Anatomy</option>
+          <option value="None">None</option>
+          <option value="Office of Academic Advising">Office of Academic Advising</option>
+          <option value="Office of Faculty">Office of Faculty</option>
+          <option value="Office of the Dean">Office of the Dean</option>
+          <option value="Office of the University Registrar">Office of the University Registrar</option>
+          <option value="Parking Services">Parking Services</option>
+          <option value="Performing Arts">Performing Arts</option>
+          <option value="Physical Therapy and Rehabilitation Sciences">Physical Therapy and Rehabilitation Sciences</option>
+          <option value="Physics">Physics</option>
+          <option value="Planning, Design & Construction">Planning, Design & Construction</option>
+          <option value="Strategic Enrollment Services">Strategic Enrollment Services</option>
+          <option value="Student Center for Diversity and Inclusion">Student Center for Diversity and Inclusion</option>
+          <option value="Westphal College Dean's Office of Inclusion, Diversity, Equity, and Anti-Rasicm">Westphal College Dean's Office of Inclusion, Diversity, Equity, and Anti-Rasicm</option>
+        </select>
+
+        <label for="position-filter">Position Type:</label>
+        <select id="position-filter">
+          <option value="" disabled selected>Select position</option>
+          <option value="(Spring 2025) Desk Assistant-Race Hall">(Spring 2025) Desk Assistant-Race Hall</option>
+          <option value="Academic Office Assistant/Front Desk Receptionist">Academic Office Assistant/Front Desk Receptionist</option>
+          <option value="Academic Research & Content Strategy Assistant">Academic Research & Content Strategy Assistant</option>
+          <option value="Academic Resource Center (ARC) Ambassador">Academic Resource Center (ARC) Ambassador</option>
+          <option value="Administrative Assistant">Administrative Assistant</option>
+          <option value="Administrative Coordinator">Administrative Coordinator</option>
+          <option value="Admissions Operations Assistant">Admissions Operations Assistant</option>
+          <option value="Admissions Services Assistant">Admissions Services Assistant</option>
+          <option value="AI/ML Programming Assistant">AI/ML Programming Assistant</option>
+          <option value="Aircraft Simulator Software Manager">Aircraft Simulator Software Manager</aircraft>
+          <option value="Alumni Engagement Assistant">Alumni Engagement Assistant</option>
+          <option value="Archives & Special Collections Assistant">Archives & Special Collections Assistant</option>
+          <option value="Archives Support Technician">Archives Support Technician</option>
+          <option value="ASAP Shabbat Work Study">ASAP Shabbat Work Study</option>
+          <option value="Athletic Equipment Assistant">Athletic Equipment Assistant</option>
+          <option value="Athletic Fueling Station Attendant">Athletic Fueling Station Attendant</option>
+          <option value="Battery Lab Assistant">Battery Lab Assistant</option>
+          <option value="Biomedical Research Lab Assistant">Biomedical Research Lab Assistant</option>
+          <option value="Biostatistics Marketing Assistant">Biostatistics Marketing Assistant</option>
+          <option value="CAT Work Study Student">CAT Work Study Student</option>
+          <option value="CATALYST Fellow">CATALYST Fellow</option>
+          <option value="Chemical Analysis of Materials">Chemical Analysis of Materials</option>
+          <option value="Chemistry Instructional Recitation Assistants">Chemistry Instructional Recitation Assistants</option>
+          <option value="COE Innovation Studio Jr. Lab Technician">COE Innovation Studio Jr. Lab Technician</option>
+          <option value="Communication and Content Creation Work Study">Communication and Content Creation Work Study</option>
+          <option value="Communications Assistant">Communications Assistant</option>
+          <option value="Community-Engaged Learning Assistants - Dance">Community-Engaged Learning Assistants - Dance</option>
+          <option value="Content Creator">Content Creator</option>
+          <option value="Dance Program Assistant">Dance Program Assistant</option>
+          <option value="Desk Assistant Millennium Hall">Desk Assistant Millennium Hall</option>
+          <option value="Diatom Herbarium Collection Assistant">Diatom Herbarium Collection Assistant</option>
+          <option value="Dornsife Center Community Martial Arts Assistant">Dornsife Center Community Martial Arts Assistant</option>
+          <option value="Dornsife Center Music Teacher">Dornsife Center Music Teacher</option>
+          <option value="Drexel Central Student Admissions Representative">Drexel Central Student Admissions Representative</option>
+          <option value="Drexel Mascot, Mario the Magnificent">Drexel Mascot, Mario the Magnificent</option>
+          <option value="Drexel Student Ambassador">Drexel Student Ambassador</option>
+          <option value="Drexel Tree Canopy Arbor Pro Data Entry and Updates">Drexel Tree Canopy Arbor Pro Data Entry and Updates</option>
+          <option value="Drexel University Physical Therapy Front Desk Receptionist">Drexel University Physical Therapy Front Desk Receptionist</option>
+          <option value="ENSS Major Assistant">ENSS Major Assistant</option>
+          <option value="Fashion Drawing Model">Fashion Drawing Model</option>
+          <option value="Fit Model - Menswear and Womenswear Prototype">Fit Model - Menswear and Womenswear Prototype</option>
+          <option value="Front Desk Assistant">Front Desk Assistant</option>
+          <option value="Front Desk Associate">Front Desk Associate</option>
+          <option value="Gallery Attendant">Gallery Attendant</option>
+          <option value="Graduate Admissions Office Assistant">Graduate Admissions Office Assistant</option>
+          <option value="Healing Hurt People Program Assistant">Healing Hurt People Program Assistant</option>
+          <option value="Herbarium Assistant">Herbarium Assistant</option>
+          <option value="Lab Assistant">Lab Assistant</option>
+          <option value="Laboratory assistant">Laboratory assistant</option>
+          <option value="Laboratory Assistant">Laboratory Assistant</option>
+          <option value="Library Assistant">Library Assistant</option>
+          <option value="Lindy Center Front Desk and Administrative Office Support">Lindy Center Front Desk and Administrative Office Support</option>
+          <option value="Lindy Center Front Desk and Event Coordination Support">Lindy Center Front Desk and Event Coordination Support</option>
+          <option value="Lindy Center Front Desk and Newsletter Coordinator">Lindy Center Front Desk and Newsletter Coordinator</option>
+          <option value="Lindy Center Front Desk and Social Media Support">Lindy Center Front Desk and Social Media Support</option>
+          <option value="Marketing & Communications Assistant (College of Arts & Sciences)">Marketing & Communications Assistant (College of Arts & Sciences)</option>
+          <option value="Modern Language Tutors (Chinese, French, Japanese, Spanish)">Modern Language Tutors (Chinese, French, Japanese, Spanish)</option>
+          <option value="Office Assistance">Office Assistance</option>
+          <option value="Office Assistant">Office Assistant</option>
+          <option value="Office Assistant (Hybrid)">Office Assistant (Hybrid)</option>
+          <option value="Office Assistant, Dornsife Office for Experimential Learning">Office Assistant, Dornsife Office for Experimential Learning</option>
+          <option value="Operations/Front Desk Assistant (Fall Term)">Operations/Front Desk Assistant (Fall Term)</option>
+          <option value="OUR Office Assistant">OUR Office Assistant</option>
+          <option value="Parking Services Student Monitor">Parking Services Student Monitor</option>
+          <option value="Project assistant">Project assistant</option>
+          <option value="Project Assistant">Project Assistant</option>
+          <option value="Project Manager Intern, Planning & Design">Project Manager Intern, Planning & Design</option>
+          <option value="Prototype Fit Model for Womenswear">Prototype Fit Model for Womenswear</option>
+          <option value="Rare Book Preservation Assistant">Rare Book Preservation Assistant</option>
+          <option value="Residence Hall Desk Assistant">Residence Hall Desk Assistant</option>
+          <option value="SCDI Student Ambassador">SCDI Student Ambassador</option>
+          <option value="Television & Media Management Communications & Content Creation Work Study">Television & Media Management Communications & Content Creation Work Study</option>
+          <option value="Vidas Facilities Assistant">Vidas Facilities Assistant</option>
+          <option value="Video Assistant">Video Assistant</option>
+          <option value="Video Editing and Transcription Assistant">Video Editing and Transcription Assistant</option>
+          <option value="Volcanology Lab Assistant">Volcanology Lab Assistant</option>
+        </select>
+
+        <div class="filter-buttons">
+          <button id="clear-filters" class="secondary-btn">Clear Filters</button>
+        </div>
+      </div>
+
+      <div class="card marked-posts">
+        <h3>Marked Posts</h3>
+        <div id="mp" class="marked-posts-container">
+          <!-- Marked posts will appear here -->
+          <p class="no-marked">No marked posts.</p>
+        </div>
+      </div>
+    </aside>
+
+    <section class="right-panel">
+      <div id="opp" class="jobs-grid">
+        <!-- Dynamic job cards will be inserted here by JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Chat Modal -->
+  <div id="chatModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Chat with Employer</h2>
+        <span class="close-button" onclick="closeChat()">×</span>
+      </div>
+      <div class="modal-body">
+        <!-- Messages will be displayed here -->
+      </div>
+      <div class="modal-footer">
+        <input type="text" id="messageInput" placeholder="Type your message...">
+        <button id="sendButton">Send</button>
+      </div>
+    </div>
+  </div>
+  <!-- End Chat Modal -->
+   
+  <!-- FOOTER -->
+  <div id="footer">
+    <h2>Drexel Den</h2>
+    <p>@ 2025 Drexel Den. All Rights Reserved.<br>
+      Created by Merril Biju, Isha Patel, Zarin Tasnim, Rakia Binte Islam
+    </p>
+  </div>
+
+  <script src="{{ url_for('static', filename='scripts/WorkStudy.js') }}"></script>
+</body>
+</html>

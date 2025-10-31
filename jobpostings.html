@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Postings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/jobPostings.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo"> <a href="{{ url_for('home') }}">Drexel Den</a> </h1>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#">Apartment</a>
+                <ul class="dropdown-content">
+                    <li><a href="{{ url_for('overview') }}">Overview</a></li>
+                    <li><a href="{{ url_for('chestnut') }}">Chestnut Square</a></li>
+                    <li><a href="{{ url_for('summit') }}">The Summit</a></li>
+                    <li><a href="{{ url_for('ucross') }}">University Crossings</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ url_for('job_postings') }}">Job Posting</a></li>
+            <li><a href="{{ url_for('work_study') }}">Work Study</a></li>
+            <li><a href="{{ url_for('food') }}">Food Recommendation</a></li>
+            <li><a href="{{ url_for('text_book') }}">Textbooks</a></li>
+            <li><a href="{{ url_for('scholarships') }}">Scholarship</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="sidebar">
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="#" onclick="filterPosts('on-campus')">On-Campus Jobs</a></li>
+                <li><a href="#" onclick="filterPosts('off-campus')">Off-Campus Jobs</a></li>
+                <li><a href="#" onclick="filterPosts('all')">All Jobs</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <header>
+                <h1>Job Postings</h1>
+            </header>
+            <main>
+                <section id="post-job">
+                    <h2>Post a Job</h2>
+                    <form id="post-job-form" enctype="multipart/form-data">
+                        <label for="job-title">Job Title:</label>
+                        <input type="text" id="job-title" name="job-title" required>
+                        <br>
+                        <label for="job-description">Job Description:</label>
+                        <textarea id="job-description" name="job-description" required></textarea>
+                        <br>
+                        <label for="job-link">Job Link (if any):</label>
+                        <input type="url" id="job-link" name="job-link">
+                        <br>
+                        <label for="job-type">Job Type:</label>
+                        <select id="job-type" name="job-type" required>
+                            <option value="on-campus">On-Campus</option>
+                            <option value="off-campus">Off-Campus</option>
+                            <option value="work-study">Work-Study</option>
+                        </select>
+                        <br>
+                        <label for="job-deadline">Deadline:</label>
+                        <input type="date" id="job-deadline" name="job-deadline" required>
+                        <br>
+                        <button type="submit">Post Job</button>
+                    </form>
+                </section>
+                <section id="business-postings" class="job-postings">
+                    <h2>Job Postings</h2>
+                    <div id="job-listings">
+                        <!-- Job postings will be dynamically inserted here -->
+                    </div>
+                </section>
+
+                <!-- New Box for Displaying Inputs -->
+                <section id="input-display" class="input-box">
+                    <h2></h2>
+                    <div id="submitted-details">
+                        <!-- Submitted job details will be displayed here -->
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>Drexel Den</h2>
+        <p>@ 2025 Drexel Den. All Rights Reserved.<br>
+           Created by Merril Biju, Isha Patel, Zarin Tasnim, Rakia Binte Islam
+        </p>
+    </div>
+    <script src="{{ url_for('static', filename='scripts/jobpostings.js') }}"></script>
+
+</body>
+</html>

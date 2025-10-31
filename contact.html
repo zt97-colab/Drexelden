@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Drexel Den</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/contact.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1 class="logo"><a href="{{ url_for('home') }}">Drexel Den</a></h1>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#">Apartment</a>
+                <ul class="dropdown-content">
+                    <li><a href="{{ url_for('overview') }}">Overview</a></li>
+                    <li><a href="{{ url_for('chestnut') }}">Chestnut Square</a></li>
+                    <li><a href="{{ url_for('summit') }}">The Summit</a></li>
+                    <li><a href="{{ url_for('ucross') }}">University Crossings</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ url_for('job_postings') }}">Job Posting</a></li>
+            <li><a href="{{ url_for('work_study') }}">Work Study</a></li>
+            <li><a href="{{ url_for('food') }}">Food Recommendation</a></li>
+            <li><a href="{{ url_for('text_book') }}">Textbooks</a></li>
+            <li><a href="{{ url_for('scholarships') }}">Scholarship</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Meet the Team</h1>
+    </header>
+
+    <!-- Swiper Team Section -->
+    <div class="swiper team-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide team-member">
+                <img src="{{ url_for('static', filename='img/merril.jpg') }}" alt="Merril Biju">
+                <h3>Merril Biju</h3>
+                <p>Information Systems Major, full-stack developer</p>
+                <p>📧 mb4557@drexel.edu</p>
+                <p><em>Hi! I'm Merril. I find the architecture of backend systems particularly engaging, focusing on efficient, scalable solutions.
+                I love diving into how systems connect and everything runs smoothly behind the scenes.
+                Fun fact: I'm a competitive dancer!</em></p>
+            </div>
+            <div class="swiper-slide team-member">
+                <img src="{{ url_for('static', filename='img/isha.jpg') }}" alt="Isha Patel">
+                <h3>Isha Patel</h3>
+                <p>Cyber Security Major, full-stack developer</p>
+                <p>📧 ibp25@drexel.edu</p>
+                <p><em>Hey guys, I'm Isha! My core interest lies in cybersecurity; I'm driven by embedding robust security practices into development. 
+                I'm always thinking about how to protect our projects from potential threats and love the challenge of building defenses that are hard to crack.
+                Fun fact: I've been learning to play the ukulele in my spare time.</em></p>
+            </div>
+            <div class="swiper-slide team-member">
+                <img src="{{ url_for('static', filename='img/tasnim.jpg') }}" alt="Zarin Tasnim">
+                <h3>Zarin Tasnim</h3>
+                <p>Data Science Major, full-stack developer</p>
+                <p>📧 zt97@drexel.edu</p>
+                <p><em>Hii, I'm Zarin! I'm passionate about leveraging data science and machine learning for enhanced application intelligence.
+                My goal is to weave machine learning features into our website to make them more helpful for everyone who uses them. 
+                Fun fact: I can identify almost any dog breed on sight – a skill I picked up volunteering at a shelter.</em></p>
+            </div>
+            <div class="swiper-slide team-member">
+                <img src="{{ url_for('static', filename='img/rakia.jpg') }}" alt="Rakia Binte Islam">
+                <h3>Rakia Binte Islam</h3>
+                <p>Computer Science Major, full-stack developer</p>
+                <p>📧 rb3535@drexel.edu</p>
+                <p><em>Nice to meet you, I'm Rakia! My primary focus is on crafting intuitive user interfaces, bridging complex functionality with accessibility.
+                I get really excited about creating interfaces that not only look good but are super easy and intuitive to use. 
+                Fun fact: When I'm not coding, I'm usually experimenting with new vegetarian recipes.</em></p>
+            </div>
+        </div>
+        <!-- Arrows -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <h2>Drexel Den</h2>
+        <p>&copy; 2025 Drexel Den. All Rights Reserved.<br>
+        Created by Merril Biju, Isha Patel, Zarin Tasnim, Rakia Binte Islam</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/contact.js') }}"></script>
+</body>
+</html>

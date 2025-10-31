@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrexelDen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/dragon.css') }}">
+</head>
+<body>
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            <h1 class="logo"> <a href="{{ url_for('home') }}">Drexel Den</a> </h1>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Apartment</a>
+                    <ul class="dropdown-content">
+                        <li><a href="{{ url_for('overview') }}">Overview</a></li>
+                        <li><a href="{{ url_for('chestnut') }}">Chestnut Square</a></li>
+                        <li><a href="{{ url_for('summit') }}">The Summit</a></li>
+                        <li><a href="{{ url_for('ucross') }}">University Crossings</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('job_postings') }}">Job Posting</a></li>
+                <li><a href="{{ url_for('work_study') }}">Work Study</a></li>
+                <li><a href="{{ url_for('food') }}">Food Recommendation</a></li>
+                <li><a href="{{ url_for('text_book') }}">Textbooks</a></li>
+                <li><a href="{{ url_for('scholarships') }}">Scholarship</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="overlay"></div>
+        <h1 class="hero-title">DrexelDen</h1>
+        <p class="hero-subtitle">Your Drexel Journey starts here, one stop for <br> every dragon's need.</p>
+        <button class="cta-button" onclick="openForm()">Welcome!</button>
+        
+    </header>
+
+    <!-- Small Business of the Week Section -->
+    <section class="small-business">
+        <h1 class="header"> Small Business Of The Week!</h1>
+        <div class="container">
+            <div class="business-card">
+                <img src="{{ url_for('static', filename='img/jane-bracelets.jpg') }}" alt="Jane's Bracelets">
+                <h2>Jane’s Bracelets</h2>
+                <p> Jane’s Bracelets is a small business that sells bracelets.</p> 
+                <p> Jane’s Bracelets is located in the heart of the city.</p>
+            </div>
+            <div class="business-card">
+                <img src="{{ url_for('static', filename='img/diwali-jewellery.jpg') }}" alt="Diwali Jewellery">
+                <h2>Diwali Jewellery</h2>
+                <p> Diwali Jewellery is a small business that sells diwali jewellery.</p>
+                <p> Diwali Jewellery is located in the heart of the city.</p>
+            </div>
+            <div class="business-card">
+                <img src="{{ url_for('static', filename='img/teddy-yus.jpg') }}" alt="Teddy Yu’s">
+                <h2>Teddy Yu’s</h2>
+                <p> Teddy Yu’s is a small business that sells teddy bears and other toys.</p>
+                <p> Teddy Yu’s is located in the heart of the city.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer">
+        <h2>Drexel Den</h2>
+        <p>@ 2025 Drexel Den. All Rights Reserved.<br>
+           Created by Merril Biju, Isha Patel, Zarin Tasnim, Rakia Binte Islam
+        </p>
+     </div>
+
+    <script src="{{ url_for('static', filename='scripts/index.js') }}"></script>
+
+</body>
+</html>

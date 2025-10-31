@@ -1,0 +1,395 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+
+/* Navbar */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    color: white;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Dropdown Style */
+.nav-links .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    position: relative;  /* Ensures dropdown is positioned relative to this */
+    margin-left: -1px;
+}
+
+/* Navbar Link Styling */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: opacity 0.3s;
+    padding: 10px 15px;
+    display: block;  /* Ensures clickable area is consistent */
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Dropdown */
+.nav-links .dropdown {
+    position: relative;  /* Ensures dropdown content is positioned relative to this */
+}
+
+/* Dropdown Menu */
+.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;  /* Ensures dropdown appears directly below "Apartment" */
+    left: 50%;  /* Aligns it to the center of "Apartment" */
+    transform: translateX(-50%);  /* Centers dropdown under "Apartment" */
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Show dropdown when hovering */
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Links */
+.nav-links .dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    text-align: left;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Hover effect on dropdown links */
+.nav-links .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+.nav-links .dropdown-content a:hover {
+    background-color: #ddd;
+}
+/* Link styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* Navbar css ends*/
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('https://drexel.edu/~/media/Drexel/Core-Site-Group/Core/Images/admissions/graduate-admissions/rush-rec-3200x1600/rush-rec-3200x1600_16x9.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+/* Dark Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Hero Content */
+.hero-title {
+    font-size: 70px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    margin-top: 100px;
+}
+
+.hero-subtitle {
+    font-size: 22px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #f1f1f1;
+}
+
+/* Example: Consistent padding and margin */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 0; /* Ensure no extra padding */
+    margin-bottom: 0; /* Prevent unintended space */
+}
+
+.business-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.business-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    height: 350px;
+    width: 250px;
+}
+
+.business-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #1A3047;
+    
+}
+
+#footer {
+    background-color: #FFC502;
+    color: #1A3047;
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.header {
+    color: #1A3047;
+    padding-top: 3%;
+    text-align: center;
+}
+
+.business-card {
+    height: 550px;
+    width: 300px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+    background-color: #007bff;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], 
+.form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* When the inputs get focus */
+.form-container input[type=text]:focus, 
+.form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Login button */
+.form-container .btn {
+    background-color: #1A3047;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Cancel button */
+.form-container .cancel {
+    background-color: #FFC502;
+}
+
+/* Hover effects */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+/* Small Business of the Week Block */
+.business-highlight {
+    background-color: #ffffff;
+    border: 2px solid #FFC502;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 900px;
+    text-align: left;
+    position: relative;
+}
+
+.business-highlight h2 {
+    font-size: 32px;
+    color: #1A3047;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.business-highlight p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.business-highlight img {
+    float: right;
+    max-width: 300px;
+    margin-left: 30px;
+    border-radius: 10px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .business-highlight {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .business-highlight img {
+        float: none;
+        display: block;
+        margin: 20px auto 0;
+        max-width: 100%;
+    }
+}
+

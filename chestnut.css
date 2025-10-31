@@ -1,0 +1,236 @@
+/* General styling */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding-top: 80px; /* Adjusted to prevent navbar overlap */
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    color: #1A3047;
+    text-align: center;
+    padding: 10px;
+    font-size: large;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #1A3047;
+    color: white;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Dropdown */
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-links .dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.nav-links .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Footer */
+#footer {
+    background-color: #FFC502;
+    color: #1A3047;
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+/* Apartment Card Styling */
+.apartment-card {
+    width: 95%;
+    max-width: 1000px;
+    margin: 30px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+}
+
+.apartment-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Apartment Content */
+.apartment-container {
+    padding: 20px;
+    background-color: #fdfdfd;
+}
+
+.apartment-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.apartment-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.apartment-info h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1A3047;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #00539C;
+}
+
+.per-person {
+    font-size: 1rem;
+    color: #666;
+}
+
+.price-display,
+.available {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.available-yes {
+    color: green;
+}
+
+.available-no {
+    color: red;
+}
+
+/* Apply Button */
+.apply-button {
+    background-color: #FFC502;
+    color: #1A3047;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    display: inline-block;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+.apply-button:hover {
+    background-color: #ffb800;
+}
+
+.apply-button:disabled,
+.apply-button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Filter Bar Styling */
+.filter-bar {
+    text-align: center;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background-color: #eaeaea;
+    border-radius: 16px;
+    max-width: 650px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.filter-bar input[type="range"] {
+    width: 80%;
+    margin-top: 10px;
+}
+
+/* Global Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}

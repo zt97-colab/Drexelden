@@ -1,0 +1,515 @@
+/* COMPLETE just.css */
+/* Reset & Global */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: serif;
+  background-color: #ffffff;
+  color: #333;
+  padding-top: 80px; /* Pushes content below navbar */
+}
+
+/* Header Banner */
+h1{
+  margin: 10px;
+  font-size: 2em;
+  color: #1A3047;
+  text-align: center;
+}
+/* Header and Navigation Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: #1A3047;
+  color: white;
+  z-index: 1000;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo a:hover {
+  opacity: 0.7;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-links > * {
+  position: relative;
+  margin-left: -1px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: opacity 0.3s;
+  padding: 10px 15px;
+  display: block;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Right side Drexel Den */
+.nav-right {
+  color: white;
+}
+
+.drexel-den {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+
+
+/* Main Container */
+.main-container {
+  display: flex;
+  min-height: calc(100vh - 200px);
+}
+
+/* Left Panel (Filters + Marked Posts) */
+.left-panel {
+  width: 25%;
+  padding: 20px;
+  background: #fff;
+}
+.card {
+  background: #FFC502;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+.card label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.card input,
+.card select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Buttons (Apply, Clear, etc.) */
+button {
+  padding: 8px 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1A3047;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #cb18dc;
+}
+
+/* Right Panel (Job Listings) */
+.right-panel {
+  width: 75%;
+  padding: 20px;
+  background: #fff;
+}
+.jobs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Job Cards */
+.job-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.job-title {
+  color: #FFC502;
+  font-size: 32px;
+  margin: 0 0 16px 0;
+}
+
+.job-department {
+  color: #1D3283;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.job-education {
+  color: #B87503;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.job-section {
+  margin: 24px 0;
+}
+
+.job-section h3 {
+  color: #333;
+  font-size: 18px;
+  margin: 16px 0 8px 0;
+}
+
+.job-section p {
+  color: #666;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.job-section a {
+  color: #1D3283;
+  text-decoration: none;
+}
+
+.job-section a:hover {
+  text-decoration: underline;
+}
+
+/* Card Buttons row */
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
+.card-buttons button {
+  flex: 1;
+  padding: 8px;
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Individual Button Classes */
+.message-btn {
+  background-color: #1A3047;
+  color: #fff;
+}
+.email-btn {
+  background-color: #1A3047;
+  color: #fff;
+}
+.mark-btn {
+  background-color: #1A3047;
+  color: #fff;
+}
+.mark-btn.marked {
+  background-color: #1A3047;
+}
+
+/* Marked Posts (Right Sidebar) */
+.marked-box {
+  border: 2px solid #1A3047;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 10px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.marked-box:hover {
+  background-color: #e0e0fc;
+}
+.remove-mark-btn {
+  padding: 8px 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1A3047;
+  color: #fff;
+  cursor: pointer;
+}
+.remove-mark-btn:hover {
+  background-color: #1A3047;
+}
+
+#footer {
+  background-color: #FFC502;
+  color: #1A3047;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+  }
+  .left-panel,
+  .right-panel {
+    width: 100%;
+  }
+  .jobs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+/* Chat Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 15px 20px;
+  background-color: #1A3047;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.modal-header .modal-title {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+/* Enhanced Close Button */
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eee;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 15px 20px;
+  background-color: #f0f0f0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#messageInput {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-height: 40px;
+  box-sizing: border-box;
+}
+
+#sendButton {
+  padding: 10px 10px;
+  background-color: #1A3047;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  align-self: flex-end;
+  float: right;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.message.contact {
+  background-color: #f0f0f0;
+  align-self: flex-start;
+  float: left;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.message {
+  max-width: 70%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #e0f7fa;
+  color: #333;
+  display: block;
+}
+
+.message .timestamp {
+  font-size: 0.8em;
+  color: #777;
+  margin-top: 5px;
+  text-align: right;
+  display: block;
+}
+
+/* Select Element Styling */
+select {
+  color: #333 !important;
+}
+select:focus {
+  color: #333;
+}
+select option:first-child {
+  color: #757575;
+}
+select option {
+  color: #333;
+}
+select option[value=""][disabled] {
+  display: none;
+}
+
+/* Navbar Container */
+.navbar {
+  background-color: #1A3047;
+  display: flex;
+  align-items: center; /* Already present and correct - keeps items vertically centered */
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 60px;
+  position: relative;
+  z-index: 10;
+}
+
+.banner-title {
+  font-size: 36px;
+  color: white;
+  font-weight: bold;
+}
+
+

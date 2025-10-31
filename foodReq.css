@@ -1,0 +1,267 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0px;
+    overflow-x: hidden;
+}
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #1A3047;
+    color: white;
+    z-index: 1000;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+/* Logo Styling */
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo a:hover {
+    opacity: 0.7;
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    position: relative;  /* Ensures dropdown is positioned relative to this */
+    margin-left: -1px;
+}
+
+/* Navbar Link Styling */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: opacity 0.3s;
+    padding: 10px 15px;
+    display: block;  /* Ensures clickable area is consistent */
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Dropdown */
+.nav-links .dropdown {
+    position: relative;  /* Ensures dropdown content is positioned relative to this */
+}
+
+/* Dropdown Menu */
+.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;  /* Ensures dropdown appears directly below "Apartment" */
+    left: 50%;  /* Aligns it to the center of "Apartment" */
+    transform: translateX(-50%);  /* Centers dropdown under "Apartment" */
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Show dropdown when hovering */
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Links */
+.nav-links .dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    text-align: left;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Hover effect on dropdown links */
+.nav-links .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+html, body {
+    height: 100%; /* Ensure the body takes up the full height of the viewport */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1; /* Allow the content to take up the remaining space */
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    font-size: large;
+    margin-top: 50px; /* Adjusted to ensure content starts below navbar */
+    width: 40%; /* Optional: Limit the width of the content */
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 182, 18, 0.8);
+    color: #1A3047;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+label {
+    font-weight: bold;
+}
+input, textarea, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: black; 
+}
+button {
+    padding: 10px;
+    background-color: #FFB612; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #E6A700; 
+}
+#recommendations {
+    flex: 1; /* Allow recommendations to take up available space */
+    margin-right: 20px; /* Add spacing between recommendations and map */
+}
+#recommendation-list {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 95%; /* Ensure the list takes up full width */
+}
+
+#recommendation-list p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #333;
+}
+#map {
+    flex: 1; /* Allow the map to take up available space */
+    max-width: 110%; /* Limit the map's width to 50% of the page */
+}
+#map-container {
+    position: relative; /* Enable positioning for overlay */
+    height: auto;
+    width: 100%; /* Ensure the container takes up the full width */
+    text-align: center; /* Center the content inside the container */
+    margin-top: 20px;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center;
+}
+
+#map-image {
+    max-width: 160%; /* Ensure the image scales responsively */
+    height: auto; /* Maintain the aspect ratio */
+    border: 1px solid #ccc; /* Optional: Add a border around the image */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow for aesthetics */
+}
+
+/* Remove styles for #map-overlay and .dot */
+#map-overlay {
+    display: none; /* Hide the overlay if it exists */
+}
+
+.dot {
+    display: none; /* Hide any dots if they exist */
+}
+#events {
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ccc; /* Optional: Add a border to separate the section */
+}
+
+
+.event-ads {
+    display: flex;
+    flex-direction: column; /* Arrange events vertically */
+    gap: 20px; /* Add spacing between events */
+    align-items: center; /* Center the events horizontally */
+    margin-top: 20px;
+}
+
+.event-ad {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; /* Fixed width for ads */
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-ad:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Add a stronger shadow on hover */
+}
+
+.event-ad img.event-ad-image {
+    width: 100%; /* Make the image take up the full width of the ad */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    margin-bottom: 15px; /* Add spacing below the image */
+}
+
+.event-ad h3 {
+    font-size: 1.4rem; /* Increase the font size for the title */
+    color: #1A3047;
+    margin-bottom: 10px;
+}
+
+.event-ad p {
+    font-size: 1rem; /* Font size for the description */
+    color: #555;
+    margin: 5px 0; /* Add spacing between paragraphs */
+}
+
+.event-ad p strong {
+    color: #1A3047; /* Highlight the labels (Date and Location) */
+}

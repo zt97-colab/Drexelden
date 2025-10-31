@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Summit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/chestnut.css') }}">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Chestnut Square</h1>
+</header>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1 class="logo"> <a href="{{ url_for('home') }}">Drexel Den</a> </h1>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#">Apartment</a>
+                <ul class="dropdown-content">
+                    <li><a href="{{ url_for('overview') }}">Overview</a></li>
+                    <li><a href="{{ url_for('chestnut') }}">Chestnut Square</a></li>
+                    <li><a href="{{ url_for('summit') }}">The Summit</a></li>
+                    <li><a href="{{ url_for('ucross') }}">University Crossings</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ url_for('job_postings') }}">Job Posting</a></li>
+            <li><a href="{{ url_for('work_study') }}">Work Study</a></li>
+            <li><a href="{{ url_for('food') }}">Food Recommendation</a></li>
+            <li><a href="{{ url_for('text_book') }}">Textbooks</a></li>
+            <li><a href="{{ url_for('scholarships') }}">Scholarship</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+<!-- Filter Section -->
+<div class="filter-bar">
+    <label for="termSelect">Select Term:</label>
+    <select id="termSelect">
+        <option value="all">All Terms</option>
+        <option value="fall">Fall 2025</option>
+        <option value="spring">Spring 2025</option>
+        <option value="summer">Summer 2025</option>
+    </select>
+
+    <br><br>
+
+    <label for="priceFilter">Filter by Max Price: $<span id="priceValue">2500</span></label><br>
+    <input type="range" id="priceFilter" min="800" max="2500" step="1" value="2500">
+    <p class="price-display">Showing apartments up to $<span id="priceDisplay">2500</span></p>
+</div>
+
+<!-- Apartment Listings -->
+<div id="apartment-list">
+    {% for apartment in apartments %}
+    <section class="apartment-card" 
+         data-price="{{ apartment.price }}" 
+         data-terms="{{ apartment.terms | join(',') }}">
+    <div class="apartment-container">
+        <div class="apartment-img">
+            <img src="{{ url_for('static', filename=apartment.image) }}" alt="{{ apartment.name }}">
+        </div>
+        <div class="apartment-info">
+            <h3>{{ apartment.name }}</h3>
+            <p class="price">${{ apartment.price }}</p>
+            <p class="per-person">Per Installment/Person</p>
+            <p class="availability-status {{ 'available-yes' if apartment.available else 'available-no' }}">
+                {{ 'Available' if apartment.available else 'Not Available' }}
+            </p>
+            <a href="{{ apartment.apply_url }}" target="_blank" class="apply-button">Apply Now</a>
+        </div>
+    </div>
+</section>
+
+    {% endfor %}
+</div>
+
+<!-- Footer -->
+<div id="footer">
+    <h2>Drexel Den</h2>
+    <p>@ 2025 Drexel Den. All Rights Reserved.<br>
+       Created by Merril Biju, Isha Patel, Zarin Tasnim, Rakia Binte Islam
+    </p>
+</div>
+
+<script src="{{ url_for('static', filename='scripts/chestnut.js') }}"></script>
+</body>
+</html>

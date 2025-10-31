@@ -1,0 +1,247 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+    padding-top: 80px; /* Account for fixed navbar height */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Navbar Styles (EXACTLY like textbook.css) */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #1A3047;
+    color: white;
+    z-index: 1000;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+.logo {
+    margin: 0;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo a:hover {
+    opacity: 0.7;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    position: relative;
+    margin-left: -1px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: opacity 0.3s;
+    padding: 10px 15px;
+    display: block;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Dropdown */
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-links .dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.nav-links .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Header for "Meet the Team" */
+header {
+    text-align: center;
+    color: #1A3047;
+    font-size: 2.8em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Swiper Styles */
+.team-swiper {
+    max-width: 1130px; /* (3 slides * 350px) + (2 spaces * 40px) */
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: visible; /* CRUCIAL for side slides and arrow positioning */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.swiper-slide {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    width: 350px; /* Fixed width - REMOVED !important */
+    height: 440px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex; /* REMOVED !important */
+    flex-direction: column; /* REMOVED !important */
+    align-items: center; /* REMOVED !important */
+    justify-content: center; /* REMOVED !important */
+    flex-shrink: 0;
+    transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
+    overflow: hidden;;
+
+    /* DEFAULT STATE FOR ALL SLIDES (side slides) */
+    transform: scale(0.9);
+    filter: blur(3px);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.swiper-slide img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.swiper-slide h3 { font-size: 1.5em; color: #2c3e50; margin-bottom: 10px; }
+.swiper-slide p { font-size: 0.95em; color: #555; line-height: 1.5; margin-bottom: 8px; }
+.swiper-slide p em { font-size: 0.9em; color: #777; display: block; margin-top: 10px; }
+.swiper-slide p a { color: #3498db; text-decoration: none; }
+.swiper-slide p a:hover { text-decoration: underline; }
+
+/* ACTIVE SLIDE STYLING */
+.swiper-slide.swiper-slide-active {
+    transform: scale(1.05);
+    filter: blur(0);
+    opacity: 1;
+    z-index: 2;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Swiper Navigation Arrows */
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center */
+    width: 44px;  /* Clickable area - adjust if arrow feels too small/large */
+    height: 44px; /* Clickable area */
+    color: #1A3047; /* Arrow icon color */
+
+    /* REMOVE THESE LINES TO GET RID OF THE CIRCLE: */
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* border-radius: 50%; */
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10; /* Ensure arrows are on top */
+    /* transition: background-color 0.3s ease; REMOVED as no background now */
+}
+
+/* REMOVE THE HOVER EFFECT IF THERE'S NO BACKGROUND */
+/*
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+*/
+
+.swiper-button-prev {
+    left: -30px; /* You might want to adjust this if the arrow feels too close/far after removing the circle */
+                 /* Original problem description images had arrows further out */
+}
+
+.swiper-button-next {
+    right: -30px; /* You might want to adjust this */
+}
+
+/* Swiper arrow pseudo-elements (the actual arrow icon) */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-family: swiper-icons; /* Uses Swiper's built-in icon font */
+    font-size: 2.5rem; /* Increased size to match original images */
+    font-weight: bold; /* Can remove if you want thinner arrows */
+}
+
+/* Footer Styles (Keep your existing) */
+#footer {
+    background-color: #FFC502;
+    color: #1A3047;
+    text-align: center;
+    padding: 30px 20px 20px;
+    margin-top: auto;
+    flex-shrink: 0;
+    width: 100%;
+}
+#footer h2 { margin-bottom: 10px; }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drexel Den – Scholarships</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/Scholarships.css') }}">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- HEADER (simple, like Work Study) -->
+  <header>
+    <h1 class="logo"> <a href="{{ url_for('home') }}">Drexel Den</a></h1>
+    <nav class="nav-links">
+      <div class="dropdown">
+        <a href="#">Apartment</a>
+        <div class="dropdown-content">
+          <a href="{{ url_for('overview') }}">Overview</a>
+          <a href="{{ url_for('chestnut') }}">Chestnut Square</a>
+          <a href="{{ url_for('summit') }}">The Summit</a>
+          <a href="{{ url_for('ucross') }}">University Crossings</a>
+        </div>
+      </div>
+      <a href="{{ url_for('job_postings') }}">Job Posting</a>
+      <a href="{{ url_for('work_study') }}">Work Study</a>
+      <a href="{{ url_for('food') }}">Food Recommendation</a>
+      <a href="{{ url_for('text_book') }}">Textbooks</a>
+      <a href="{{ url_for('scholarships') }}">Scholarship</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Simple Title (like Work Study) -->
+  <h1>Scholarships</h1>
+
+  <div class="main">
+    <aside class="sidebar">
+      <div class="filter-box">
+        <h2>Location</h2>
+        <div class="location-tabs">
+          <button class="tab active" onclick="switchTab(this, 'state')">State</button>
+          <button class="tab" onclick="switchTab(this, 'county')">County</button>
+          <button class="tab" onclick="switchTab(this, 'city')">City</button>
+        </div>
+        <div class="search-trigger" onclick="openModal()">
+          <i class="fas fa-search"></i>
+          <span id="placeholder-text">Search by State Name</span>
+        </div>
+      </div>
+
+      <div class="filter-box">
+        <div class="filter-header" onclick="toggleSection('academic-section')">
+          <h2>Academic Stage</h2>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="filter-section" id="academic-section" style="display: none;">
+          <label><input type="checkbox" value="Community College: Year 1" onchange="filterScholarships()"> Community College: Year 1</label>
+          <label><input type="checkbox" value="Community College: Year 2" onchange="filterScholarships()"> Community College: Year 2</label>
+          <label><input type="checkbox" value="College: Year 1" onchange="filterScholarships()"> College: Year 1</label>
+          <label><input type="checkbox" value="College: Year 2" onchange="filterScholarships()"> College: Year 2</label>
+          <label><input type="checkbox" value="College: Year 3" onchange="filterScholarships()"> College: Year 3</label>
+          <label><input type="checkbox" value="College: Year 4" onchange="filterScholarships()"> College: Year 4</label>
+          <label><input type="checkbox" value="College: Year 5" onchange="filterScholarships()"> College: Year 5</label>
+        </div>
+      </div>
+
+      <div class="filter-box">
+        <div class="filter-header" onclick="toggleSection('type-section')">
+          <h2>Scholarship Type</h2>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="filter-section" id="type-section" style="display: none;">
+          <label><input type="checkbox" value="Merit-Based" onchange="filterScholarships()"> Merit-Based</label><br />
+          <label><input type="checkbox" value="Need-Based" onchange="filterScholarships()"> Need-Based</label>
+        </div>
+      </div>
+    </aside>
+
+    <section class="results">
+      <!-- Scholarships will be rendered here dynamically -->
+    </section>
+  </div>
+
+  <div id="modal" class="modal" style="display: none;">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchInput" placeholder="Search by State Name" oninput="renderOptions()" />
+        </div>
+        <p id="selectedCount">0/1 States chosen</p>
+        <div id="selectedBadge" class="selected-badge"></div>
+      </div>
+      <ul id="optionList" class="option-list"></ul>
+      <div class="modal-footer">
+        <button onclick="clearSelection()" class="clear-btn">CLEAR</button>
+        <div>
+          <button onclick="closeModal()">Discard</button>
+          <button onclick="applySelection()">Apply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <h2>Drexel Den</h2>
+    <p>@ 2025 Drexel Den. All Rights Reserved.<br>Created by Merril Biju, Isha Patel, Zarin Tasnim, Rakia Binte Islam</p>
+  </div>
+
+  <script src="{{ url_for('static', filename='scripts/Scholarships.js') }}"></script>
+
+</body>
+</html>
